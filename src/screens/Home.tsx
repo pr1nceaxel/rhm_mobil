@@ -13,6 +13,7 @@ import MaterialCommunityIcons from "@expo/vector-icons/MaterialCommunityIcons";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import EvilIcons from "@expo/vector-icons/EvilIcons";
 import AntDesign from "@expo/vector-icons/AntDesign";
+import capitalizeFirstLetter from "../helpers/capitalizeFirstLetter";
 
 const Home = ({ navigation }: { navigation: NavigationProp<any> }) => {
 
@@ -51,18 +52,18 @@ const Home = ({ navigation }: { navigation: NavigationProp<any> }) => {
             <View>
               <View style={tw`flex-row items-center gap-2 `}>
                 <Text style={tw`text-2xl font-medium `}>
-                  {user.firstName} {user.lastName}
+                  {capitalizeFirstLetter(user.firstName)} {capitalizeFirstLetter(user.lastName)}
                 </Text>
               </View>
-              <Text style={tw`text-lg`}>{user.matricule}</Text>
+              <Text style={tw`text-lg`}>{user.matricule.toUpperCase()}</Text>
             </View>
             <View style={tw`flex-row items-center justify-center`}>
               <View
                 style={tw`w-15 h-15 bg-blue-500 rounded-full items-center justify-center`}
               >
                 <Text style={tw`text-2xl text-white`}>
-                  {user.firstName[0]}
-                  {user.lastName[0]}
+                  {user.firstName[0].toUpperCase()}
+                  {user.lastName[0].toUpperCase()}
                 </Text>
               </View>
             </View>
