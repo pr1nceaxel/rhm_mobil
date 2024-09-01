@@ -9,6 +9,7 @@ import {
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import useAuthStore from "../store/store_auth";
 import { Box, TextArea, Radio as NativeBaseRadio } from "native-base";
+import { CameraView, Camera } from "expo-camera";
 
 import tw from "twrnc";
 import BottomSheet, {
@@ -169,8 +170,11 @@ export default function QrCode({
           Scanner le QR Code
         </Text>
         <View style={styles.barcodebox}>
-          <BarCodeScanner
-            onBarCodeScanned={scanned ? undefined : handleBarCodeScanned}
+          <CameraView
+            onBarcodeScanned={scanned ? undefined : handleBarCodeScanned}
+            barcodeScannerSettings={{
+              barcodeTypes: ["qr", "pdf417"],
+            }}
             style={{ height: 400, width: 400 }}
           />
         </View>

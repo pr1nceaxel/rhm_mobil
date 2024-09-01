@@ -23,7 +23,7 @@ const Home = ({ navigation }: { navigation: NavigationProp<any> }) => {
       weekday: "short",
       day: "numeric",
       month: "short",
-      year: "numeric",
+      year: "numeric", 
     })
   );
 

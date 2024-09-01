@@ -23,8 +23,13 @@
     "web": {
       "favicon": "./assets/favicon.png"
     },
-    "plugins": [
-      "react-native-vision-camera"
+  "plugins": [
+      [
+        "expo-barcode-scanner",
+        {
+          "cameraPermission": "Allow $(PRODUCT_NAME) to access camera."
+        }
+      ]
     ]
   }
 }
