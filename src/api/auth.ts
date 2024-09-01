@@ -12,12 +12,12 @@ interface Tokens {
 }
 
 export const loginApi = async (
-  pseudo: string,
+  matricule: string,
   password: string
 ): Promise<AxiosResponse<Tokens>> => {
   try {
     const response: AxiosResponse<Tokens> = await api.post("/auth/login", {
-      pseudo,
+      matricule,
       password,
     });
 
@@ -28,6 +28,7 @@ export const loginApi = async (
       await login(response.data.data , accessToken);
       await AsyncStorage.setItem("refreshToken", refreshToken);
     }
+
 
     return response;
   } catch (error) {

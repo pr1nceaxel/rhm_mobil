@@ -8,15 +8,14 @@ import {
 } from "react-native";
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import useAuthStore from "../store/store_auth";
-import { Box, TextArea, Radio as NativeBaseRadio } from "native-base";
-import { CameraView, Camera } from "expo-camera";
+import { Box,  Radio as NativeBaseRadio } from "native-base";
+import { CameraView } from "expo-camera";
 
 import tw from "twrnc";
 import BottomSheet, {
   BottomSheetScrollView,
   BottomSheetTextInput,
 } from "@gorhom/bottom-sheet";
-import { BarCodeScanner } from "expo-barcode-scanner";
 import { makePresence } from "../api/employe";
 import { NavigationProp } from "@react-navigation/native";
 
